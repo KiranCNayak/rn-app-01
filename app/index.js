@@ -16,6 +16,16 @@ const theme = {
 }
 
 const App = () => {
+  const [loaded] = useFonts({
+    InterBold: require("../assets/fonts/Inter/Inter-Bold.ttf"),
+    InterSemiBold: require("../assets/fonts/Inter/Inter-SemiBold.ttf"),
+    InterMedium: require("../assets/fonts/Inter/Inter-Medium.ttf"),
+    InterRegular: require("../assets/fonts/Inter/Inter-Regular.ttf"),
+    InterLight: require("../assets/fonts/Inter/Inter-Light.ttf"),
+  })
+
+  if (!loaded) return null
+
   return (
     <NavigationContainer theme={theme} independent>
       <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Home'>
