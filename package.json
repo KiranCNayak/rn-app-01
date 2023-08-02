@@ -5,6 +5,7 @@
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
+    "format": "prettier --write \"**/*.{js,jsx,json,css,scss,md}\"",
     "ios": "expo start --ios",
     "web": "expo start --web"
   },
@@ -31,7 +32,13 @@
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
-    "@babel/plugin-proposal-export-namespace-from": "^7.18.9"
+    "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^8.9.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "prettier": "^3.0.0"
   },
   "resolutions": {
     "metro": "^0.73.7",
@@ -41,6 +48,18 @@
     "metro": "^0.73.7",
     "metro-resolver": "^0.73.7"
   },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json}": [
+      "eslint --fix"
+    ],
+    "src/**/*.{js,jsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "private": true
 }
-
