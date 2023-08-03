@@ -27,10 +27,20 @@ const App = () => {
   if (!loaded) return null
 
   return (
-    <NavigationContainer theme={theme} independent>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Home'>
-        <Stack.Screen name='Home' component={Home} />
-        <Stack.Screen name='Details' component={Details} />
+    <NavigationContainer
+      theme={theme}
+      independent>
+      <Stack.Navigator
+        screenOptions={{ headerShown: false }}
+        initialRouteName="Home">
+        <Stack.Screen
+          name="Home"
+          component={Home}
+        />
+        <Stack.Screen
+          name="Details"
+          component={Details}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   )

@@ -18,10 +18,11 @@ const NFTCard = ({ data }) => {
         margin: SIZES.base,
         ...SHADOWS.dark,
       }}>
-      <View style={{ width: "100%", height: 250 }}>
+      <View style={{ width: "100%",
+        height: 250 }}>
         <Image
           source={data.image}
-          resizeMode='cover'
+          resizeMode="cover"
           style={{
             width: "100%",
             height: "100%",
@@ -29,7 +30,11 @@ const NFTCard = ({ data }) => {
             borderTopRightRadius: SIZES.font,
           }}
         />
-        <CircleButton imgUrl={assets.heart} top={10} right={10} />
+        <CircleButton
+          imgUrl={assets.heart}
+          top={10}
+          right={10}
+        />
       </View>
       <SubInfo />
       <View

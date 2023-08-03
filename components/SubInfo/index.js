@@ -6,10 +6,20 @@ import { SIZES, FONTS, COLORS, SHADOWS, assets } from "../../constants"
 export const NFTTitle = ({ title, subTitle, titleSize, subTitleSize }) => {
   return (
     <View>
-      <Text style={{ fontFamily: FONTS.bold, fontSize: titleSize, color: COLORS.primary }}>
+      <Text
+        style={{
+          fontFamily: FONTS.bold,
+          fontSize: titleSize,
+          color: COLORS.primary,
+        }}>
         {title}
       </Text>
-      <Text style={{ fontFamily: FONTS.semiBold, fontSize: subTitleSize, color: COLORS.gray }}>
+      <Text
+        style={{
+          fontFamily: FONTS.semiBold,
+          fontSize: subTitleSize,
+          color: COLORS.gray,
+        }}>
         {subTitle}
       </Text>
     </View>
@@ -18,9 +28,18 @@ export const NFTTitle = ({ title, subTitle, titleSize, subTitleSize }) => {
 
 export const EthPrice = ({ price }) => {
   return (
-    <View style={{ flexDirection: "row", alignItems: "center" }}>
-      <Image source={assets.eth} resizeMode='contain' style={{ width: 18, height: 18 }} />
-      <Text style={{ fontFamily: FONTS.bold, fontSize: SIZES.medium }}>{price}</Text>
+    <View style={{ flexDirection: "row",
+      alignItems: "center" }}>
+      <Image
+        source={assets.eth}
+        resizeMode="contain"
+        style={{ width: 18,
+          height: 18 }}
+      />
+      <Text style={{ fontFamily: FONTS.bold,
+        fontSize: SIZES.medium }}>
+        {price}
+      </Text>
     </View>
   )
 }
@@ -29,8 +48,12 @@ export const ImageCmp = ({ imgUrl, index }) => {
   return (
     <Image
       source={imgUrl}
-      resizeMode='contain'
-      style={{ width: 48, height: 48, marginLeft: index === 0 ? 0 : -SIZES.font }}
+      resizeMode="contain"
+      style={{
+        width: 48,
+        height: 48,
+        marginLeft: index === 0 ? 0 : -SIZES.font,
+      }}
     />
   )
 }
@@ -38,9 +61,15 @@ export const ImageCmp = ({ imgUrl, index }) => {
 export const People = () => {
   return (
     <View style={{ flexDirection: "row" }}>
-      {[assets.person02, assets.person03, assets.person04].map((imgUrl, index) => (
-        <ImageCmp key={`People-${index}`} imgUrl={imgUrl} index={index} />
-      ))}
+      {[ assets.person02, assets.person03, assets.person04 ].map(
+        (imgUrl, index) => (
+          <ImageCmp
+            key={`People-${index}`}
+            imgUrl={imgUrl}
+            index={index}
+          />
+        )
+      )}
     </View>
   )
 }

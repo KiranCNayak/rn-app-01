@@ -3,10 +3,15 @@ import React from "react"
 
 import { useIsFocused } from "@react-navigation/core"
 
-const FocusedStatusBar = (props) => {
+const FocusedStatusBar = props => {
   const isFocused = useIsFocused()
 
-  return !isFocused ? null : <StatusBar animated={true} {...props} />
+  return !isFocused ? null : (
+    <StatusBar
+      animated={true}
+      {...props}
+    />
+  )
 }
 
 export default FocusedStatusBar
